@@ -8,7 +8,7 @@ Selain Bahasa Indonesia yang ada dan dipelajari masyarakat Indonesia, bahasa yan
 ***************
 Demo
 ***************
--  wazifa.web.id/stemjawa
+- http://wazifa.web.id/stemjawa
 
 
 ***************
