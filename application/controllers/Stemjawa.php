@@ -288,7 +288,7 @@ class Stemjawa extends CI_Controller {
 		return $tempkata;
 	}
 
-	function stoplist($kata){
+	function tokenizing($kata){
 	$stoplist  = array("apa", "sapa", "piye", "pira", "kapan", "ngapa", "genea", "kui", "kae", "kono", "iki", "iku", "sawise", "sadurunge", "wiwit", "rikala", "nalika", "sinambi", "nganti", "yen", "janji", "saupama", "supaya", "sanadyan", "kamangka", "ing", "sabab", "jalaran", "awit", "mula", "tanpa", "lan", "sarta", "tekan", "kareben", "tinimbang", "banjur", "nanging", "malah", "kanthi", "sebab", "amarga", "lajeng", "saengga", "bareng", "supados");
 	$preg_replace= preg_replace('/[^A-Za-z0-9]/', ' ', strip_tags($kata));
 	$lowercase = strtolower($preg_replace);
@@ -364,7 +364,7 @@ class Stemjawa extends CI_Controller {
 		$stemming .=$sql[$i]->isi;
 		
 		}
-		$stoplist = $this->stoplist($stemming);
+		$stoplist = $this->tokenizing($stemming);
 		$kata =  explode(" ",$stoplist);
 		$kataunik = array_unique($kata);
 		// var_dump($kataunik); die();
@@ -403,7 +403,7 @@ class Stemjawa extends CI_Controller {
 		
 		$teks =$sql[0]->isi;
 		if ($tokenizing == true) {
-		$teks = $this->stoplist($teks);
+		$teks = $this->tokenizing($teks);
 		}
 		$kata =  explode(" ",$teks);
 
